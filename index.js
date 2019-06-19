@@ -64,12 +64,15 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post("/",(req,res)=>{  
+app.post("/webhook",(req,res)=>{  
+ 
+ console.log("webhook enter");
+ console.log("webhook action"+req.body.queryResult.action );
   
-  if (req.body.result.action === "schedule") {
+  if (req.body.queryResult.action === "schedule") {
   
   }
-  else if (req.body.result.action === "teaminfo")
+  else if (req.body.queryResult.action === "teaminfo")
   {  
       Teaminfo.findByPk(req.params.id)
       .then(team => {    
