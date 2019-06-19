@@ -67,7 +67,7 @@ app.get("/",(req,res)=>{
 app.post("/webhook",(req,res)=>{  
  
  console.log("webhook enter");
- console.log("webhook action"+req.body.queryResult.action );
+ console.log("webhook action"+req.body );
   
   if (req.body.queryResult.action === "schedule") {
   
