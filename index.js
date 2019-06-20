@@ -71,7 +71,10 @@ const Menu = sequelize.define('menus',
       type: Sequelize.STRING,
       field: "menu",
       allowNull: false
-    },   
+    },  
+  date:{
+    type: Sequelize.DATE,
+  }
   },
   {
     timestamps: false,
@@ -94,7 +97,7 @@ app.post("/webhook",(req,res)=>{
  console.log("webhook enter");
   console.log(req.body );
  console.log(JSON.stringify(req.body ));
- alert(req.body.queryResult.action )
+
   
   if (req.body.queryResult.action === "schedule") {
   
