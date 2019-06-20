@@ -64,6 +64,24 @@ const Teaminfo = sequelize.define('teaminfos',
 app.get("/",(req,res)=>{
   res.send("hello world")
 })
+//menu table
+const Menu = sequelize.define('menus',
+  {
+    description: {
+      type: Sequelize.STRING,
+      field: "menu",
+      allowNull: false
+    },   
+  },
+  {
+    timestamps: false,
+    tableName: 'menu',
+  })
+
+  app.get("/menu",(req,res)=>{
+    res.send("all menus")
+  })
+
 
 
 app.post("/webhook",(req,res)=>{  
