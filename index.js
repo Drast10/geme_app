@@ -25,6 +25,8 @@ const Teaminfo = sequelize.define('teaminfos',
 
   })
 
+
+
   const GameSchedule = sequelize.define('gameschedules',
   {
     score: {
@@ -103,16 +105,6 @@ app.post("/webhook",(req,res)=>{
     
     }  
 })
-
-
-
-
-
-
-
-
-
-
 
 
  const port =process.env.PORT|| 5000
