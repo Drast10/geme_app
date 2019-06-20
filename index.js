@@ -79,7 +79,11 @@ const Menu = sequelize.define('menus',
   })
 
   app.get("/menu",(req,res)=>{
-    res.send("all menus")
+    Menu.findAll()
+    .then(menuItem=>{
+      res.send({menuItem})
+    })
+    .catch(console.error())
   })
 
 
