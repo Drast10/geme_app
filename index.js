@@ -78,13 +78,14 @@ const Menu = sequelize.define('menus',
     tableName: 'menu',
   })
 
-  app.get("/menu",(req,res)=>{
-    Menu.findAll()
-    .then(menuItem=>{
-      res.send({menuItem})
-    })
-    .catch(console.error())
+ const data = app.get("/menu",(req,res)=>{
+  const time = req.body.queryResult.parameters.time
+  Menu.findAll()
+  .then(menuItem=>{
+    res.json({menuItem, time})
   })
+  .catch(console.error())
+})
 
 
 
