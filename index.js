@@ -104,6 +104,12 @@ app.post("/webhook",(req,res)=>{
             fulfillmentText: "Great! I've set your reservation for $number person on "+req.body.queryResult.parameters.date+" at"+ req.body.queryResult.parameters.time+". Do you have any special occasion?",
         });
   }
+ else if (req.body.queryResult.action === "menuTye") {
+   
+   res.json({
+            fulfillmentText: "Great! "
+        });
+  }
   else if (req.body.queryResult.action === "teaminfo")
   {  
       Teaminfo.findByPk(req.params.id)
