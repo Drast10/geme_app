@@ -94,6 +94,7 @@ app.post("/webhook",(req,res)=>{
  console.log("webhook enter");
   console.log(req.body );
  console.log(JSON.stringify(req.body ));
+ alert(req.body.queryResult.action )
   
   if (req.body.queryResult.action === "schedule") {
   
@@ -106,6 +107,7 @@ app.post("/webhook",(req,res)=>{
   }
  else if (req.body.queryResult.action === "menuType") {
    console.log('hi',req.body.queryResult.action)
+  
    res.json({
             fulfillmentText: "Great! "
         });
